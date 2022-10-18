@@ -1,0 +1,43 @@
+.sidebar {
+  width: 100%;
+  height: calc(100vh - 64px);
+  &-panel {
+    min-width: 15vw;
+    box-shadow: 16px 0px 20px -20px rgba(137, 137, 137, 1);
+  }
+}
+
+.sidebar-panel-toggle {
+  margin-right: 10px;
+}
+.sidebar-menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-container {
+  justify-self: flex-end;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-panel {
+  padding: 20px;
+  border: none;
+}
+
+.menu-itemText {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 1.2rem;
+}
