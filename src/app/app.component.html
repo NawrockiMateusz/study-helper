@@ -1,42 +1,14 @@
-<mat-toolbar color="primary" class="navbar">
-  <div class="sidebar-panel-toggle">
-    <button mat-icon-button type="button" mat-button (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-  </div>
-  <div>Study Helper 📖</div>
-  <div class="menu-container">
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>
-        <mat-icon>settings</mat-icon>
-        <span>Settings</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>live_help</mat-icon>
-        <span>Contact</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon color="">logout</mat-icon>
-        <span>Logout</span>
-      </button>
-    </mat-menu>
-  </div>
-</mat-toolbar>
-
+<app-navbar [drawer]="drawer"></app-navbar>
 <mat-drawer-container class="sidebar" autosize>
   <mat-drawer #drawer class="sidebar-panel" mode="side">
     <ul class="sidebar-menu-list">
       <li class="sidebar-menu-listItem">
-        <button mat-button>
+        <button mat-button routerLink="/todo-list">
           <mat-icon>checklist</mat-icon
           ><span class="menu-itemText">To do list</span>
         </button>
       </li>
     </ul>
   </mat-drawer>
-
-  <div class="example-sidenav-content"></div>
+  <router-outlet></router-outlet>
 </mat-drawer-container>

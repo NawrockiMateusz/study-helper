@@ -11,9 +11,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { TodolistComponent } from './todolist/todolist.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { PageNotExistComponent } from './page-not-exist/page-not-exist.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent],
+  declarations: [AppComponent, NavbarComponent, TodolistComponent, HomepageComponent, PageNotExistComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

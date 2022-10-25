@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  &__panel {
+    &--toggle {
+      margin-right: 10px;
+    }
+    &-title {
+      cursor: pointer;
+      &:hover {
+        opacity: 50%;
+      }
+    }
+    &-menu {
+      justify-self: flex-end;
+    }
+  }
+}
