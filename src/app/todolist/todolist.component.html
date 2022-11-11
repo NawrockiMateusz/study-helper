@@ -1,1 +1,42 @@
-<p>todolist works!</p>
+<main class="main">
+  <header><h1>Lista zadań</h1></header>
+  <form class="form">
+    <div class="form__header">
+      <mat-form-field class="form__task-name" appearance="fill">
+        <mat-label>Zadanie</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="form__datapicker">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="form__add-task-button">
+        Dodaj
+      </button>
+    </div>
+    <ul class="tasks-list">
+      <li class="tasks-list__item">
+        <span>1. Treść zadania - Termin wykonania</span>
+        <div class="tasks-list__buttons">
+          <button
+            mat-raised-button
+            color="warn"
+            class="tasks-list__button--remove"
+          >
+            Usuń
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            class="tasks-list__button--done"
+          >
+            Zakończ
+          </button>
+        </div>
+      </li>
+    </ul>
+  </form>
+</main>
