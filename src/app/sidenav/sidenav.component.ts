@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, ViewChild, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { NgIf } from '@angular/common';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
+import { SidenavService } from '../services/sidenav.service';
+import { Subscription, take } from 'rxjs';
 
 @Component({
   selector: 'app-sidenav',
@@ -10,4 +12,22 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
 })
-export class SidenavComponent {}
+export class SidenavComponent implements OnDestroy {
+  sidenavService = inject(SidenavService);
+
+  @ViewChild('drawer') drawer!: MatDrawer;
+
+  subscription!: Subscription;
+
+  ngOnInit() {
+    this.subscription = this.sidenavService.sidebarToggle$.subscribe(() => {
+      if (this.drawer) {
+        this.drawer.toggle();
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+}
