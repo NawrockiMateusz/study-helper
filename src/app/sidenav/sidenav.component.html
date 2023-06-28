@@ -1,0 +1,14 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side" color="primary">
+        <p>Here will be menu</p>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+
+        <div>Here will be content - routing path</div>
+        <button type="button" mat-raised-button color="warn" (click)="drawer.toggle()">
+            Open
+        </button>
+    </div>
+
+</mat-drawer-container>
