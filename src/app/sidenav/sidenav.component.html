@@ -1,10 +1,24 @@
-<mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side" color="primary">
-        <p>Here will be menu</p>
+<mat-drawer-container class="container" autosize>
+
+    <mat-drawer #drawer class="container-sidenav" mode="side" color="primary">
+        <ul class="list">
+            <li class="list__item"><mat-icon>checklist_rtl</mat-icon><a routerLink="/to-do" routerLinkActive="active"
+                    class="list__item--link">Lista
+                    zadań</a></li>
+            <li class="list__item"><mat-icon>assignment</mat-icon><a routerLink="/notes" routerLinkActive="active"
+                    class="list__item--link">Notatki</a></li>
+            <li class="list__item"><mat-icon>timer</mat-icon><a routerLink="/pomodoro" routerLinkActive="active"
+                    class="list__item--link">Pomodoro Timer</a></li>
+            <li class="list__item"><mat-icon>edit_note</mat-icon><a routerLink="/case-converter"
+                    routerLinkActive="active" class="list__item--link">Konwerter tekstu</a></li>
+            <li class="list__item"><mat-icon>light_mode</mat-icon><a routerLink="/weather" routerLinkActive="active"
+                    class="list__item--link">Pogoda</a></li>
+
+        </ul>
     </mat-drawer>
 
-    <div class="example-sidenav-content">
-        <div>Here will be content - routing path</div>
+    <div class="container-sidenav__content">
+        <router-outlet></router-outlet>
     </div>
 
 </mat-drawer-container>

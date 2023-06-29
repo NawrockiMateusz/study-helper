@@ -3,12 +3,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgIf } from '@angular/common';
 import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 import { SidenavService } from '../services/sidenav.service';
-import { Subscription, take } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { MatIconModule } from '@angular/material/icon';
+
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [MatSidenavModule, NgIf, MatButtonModule],
+  imports: [
+    MatSidenavModule,
+    NgIf,
+    MatButtonModule,
+    RouterOutlet,
+    MatIconModule,
+    RouterLink,
+  ],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
 })
