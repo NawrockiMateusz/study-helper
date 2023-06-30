@@ -4,7 +4,17 @@
     </button>
     <a routerLink="/" class="logo">Study helper</a>
     <span class="header-spacer"></span>
-    <button mat-icon-button>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>account_circle</mat-icon>
     </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>person</mat-icon>
+            <span>Profil</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon class="logout">logout</mat-icon>
+            <span class="logout">Wyloguj się</span>
+        </button>
+    </mat-menu>
 </mat-toolbar>

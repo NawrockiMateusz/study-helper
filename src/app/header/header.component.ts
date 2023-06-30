@@ -3,6 +3,8 @@ import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+
 import { SidenavService } from '../services/sidenav.service';
 import { RouterLink } from '@angular/router';
 
@@ -11,7 +13,13 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, RouterLink],
+  imports: [
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    RouterLink,
+  ],
 })
 export class HeaderComponent {
   sidenavService = inject(SidenavService);
